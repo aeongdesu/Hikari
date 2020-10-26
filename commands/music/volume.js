@@ -1,0 +1,13 @@
+module.exports = {
+    name: "음량",
+    aliases: ["볼륨"],
+    description: "음량을 조절해요",
+    run: async (client, message, args) => {
+      if (!message.member.voice.channel) return message.channel.send("보이스채널에 먼저 들어가셔야 해요!")
+      if (!client.distube.isPlaying(message)) return message.channel.send("듣고 계신거 맞죠?!")
+      let volume = parseInt(args[0]);
+      if (isNaN(volume)) return message.channel.send(`\`0 ~ 100\`까지에요, 기본은 \`50%\``)
+      client.distube.setVolume(message, volume);
+      message.channel.send(`\`${volume}%\`로 설정했어요!`)
+    }
+  }

@@ -1,0 +1,28 @@
+{
+  "name": "hikari",
+  "version": "1.2.0",
+  "description": "Discord.JS Music bot for korean",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeepSOBP/Hikari.git"
+  },
+  "keywords": [
+    "discordjs"
+  ],
+  "author": "KeepSOBP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KeepSOBP/Hikari/issues"
+  },
+  "homepage": "https://github.com/KeepSOBP/Hikari#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.3",
+    "discord.js": "^12.4.1",
+    "distube": "^2.6.8",
+    "ffmpeg-static": "^4.2.7"
+  }
+}
