@@ -25,7 +25,7 @@ run: async (client, message, args) => {
         .setTimestamp();
         message.channel.send(Embed)
     } catch (e) {
-        message.channel.send(`E | Error: \`${e}\``)
+        message.channel.send(`에러TV)\`${e}\``)
     }
 }
 }

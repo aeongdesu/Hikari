@@ -13,8 +13,8 @@ client.aliases = new Discord.Collection();
 // Client events
 
 client.on("ready", () => {
-  console.log(`${client.user.username} ready!`);
-  client.user.setActivity(`${PREFIX}도움 | Beta`);
+  console.log(`------------------------------------\n${client.user.username} ready!`);
+  client.user.setActivity(`${PREFIX}도움 | 400+ 이상 사이트 지원! | ${client.guilds.cache.size} | Beta`);
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);

@@ -5,7 +5,7 @@ module.exports = {
   aliases: ["아바타", "프로필사진", "프사"],
   description: "프사를 보여줘요",
   cooldown: "5",
-run: async (message) => {
+run: async (client, message, args) => {
     // nogada
       const Avatar = message.author.displayAvatarURL({ dynamic: true, format: "png" });
       const Avatar128 = message.author.displayAvatarURL({ dynamic: true, format: "png", size: 128 });

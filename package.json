@@ -21,6 +21,7 @@
   "homepage": "https://github.com/KeepSOBP/Hikari#readme",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
+    "@ksoft/api": "^3.1.9",
     "discord.js": "^12.4.1",
     "distube": "^2.6.8",
     "ffmpeg-static": "^4.2.7"
