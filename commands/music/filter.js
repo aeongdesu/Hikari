@@ -11,8 +11,7 @@ run: async (client, message, args) => {
     let NoEmbed = new MessageEmbed()
     .setTitle("Hikari :heart:")
     .setColor("RANDOM")
-    .setDescription("**필터 설정시 노래를 다시 시작합니다!**")
-    .addField("필터들", "`3d`, `bassboost`, `echo`, `karaoke`, `nightcore`, `vaporwave`")
+    .addField("필터들", "`3d`, `bassboost`, `echo`, `karaoke`, `nightcore`, `vaporwave`, `flanger`,\n`gate`, `haas`, `reverse`, `surround`, `mcompand`, `phaser`, `tremolo`, `earwax`")
     .setTimestamp();
 
     if (!string) return message.channel.send(NoEmbed)

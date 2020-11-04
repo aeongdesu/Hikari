@@ -135,5 +135,6 @@ client.distube
     })
     // DisTubeOptions.searchSongs = true
     .on("searchCancel", (message) => message.channel.send(":thinking: 취소됐어요!"))
-    .on("error", (message, err) => message.channel.send(`에러TV)${err}`));
+    .on("error", (message, err) => message.channel.send(`에러TV)${err}`))
+    .on("noRelated", message => message.channel.send("삐빅 삐빅.. 더이상... 찾을 수 없습니다..."));
 
