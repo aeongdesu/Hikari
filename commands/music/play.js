@@ -10,7 +10,7 @@ run: async (client, message, args) => {
     let playEmbed = new MessageEmbed()
     .setTitle("Hikari :heart:")
     .setColor("RANDOM")
-    .addField("ㅑ재생 <URL>", "[수많은 사이트들을 지원해요!](https://github.com/youtube-dl2/youtube-dl/blob/master/docs/supportedsites.md)\n~~스포티파이 빼고~~")
+    .addField("ㅑ재생 <URL>", "[수많은 사이트들을 지원해요!](https://web.archive.org/web/20201015124159/https://ytdl-org.github.io/youtube-dl/supportedsites.html)\n~~스포티파이 빼고~~")
     .setTimestamp();
     if (!string) return message.channel.send(playEmbed)
     try {
