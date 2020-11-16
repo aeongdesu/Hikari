@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js");
 const client = new Discord.Client()
 const fs = require("fs")
 const { TOKEN, PREFIX } = require("./config.json");
+const filters = require("./filters.json");
 const DisTube = require("distube");
 
 client.login(TOKEN);
@@ -61,7 +62,10 @@ client.on('message', async message => {
 
 // DisTube for music
 client.distube = new DisTube(client, { 
-  searchSongs: true
+  highWaterMark: 1 << 25,
+  searchSongs: true,
+  leaveOnEmpty: true,
+  customFilters: filters
 });
 
 const status = (queue) => `음량: \`${queue.volume}%\` | 필터: \`${queue.filter || "꺼짐"}\` | 반복: \`${queue.repeatMode ? queue.repeatMode == 2 ? "전체 반복" : "한 곡만" : "꺼짐"}\` | 자동재생: \`${queue.autoplay ? "On" : "꺼짐"}\``;
@@ -72,6 +76,7 @@ client.distube
     const Embed = new MessageEmbed()
     .setTitle(":white_check_mark: 재생중")
     .setColor("RANDOM")
+    .setThumbnail(`${song.thumbnail}`)
     .addField("노래", `\`${song.name}\` - \`${song.formattedDuration}\``)
     .addField("신청자", `${song.user}`)
     .addField("상태", `${status(queue)}`)
@@ -131,7 +136,7 @@ client.distube
     .setDescription(`**아무거나 치시거나 60초뒤면 취소 됩니다.**\n 숫자를 입력해주세요!\n\n${resultname}`)
     .setTimestamp();
         // end embed
-    message.channel.send(Embed)
+    message.channel.send(Embed).then(msg => {msg.delete({ timeout: 60000 })})
     })
     // DisTubeOptions.searchSongs = true
     .on("searchCancel", (message) => message.channel.send(":thinking: 취소됐어요!"))

@@ -6,8 +6,13 @@ module.exports = {
       if (!message.member.voice.channel) return message.channel.send("보이스채널에 먼저 들어가셔야 해요!")
       if (!client.distube.isPlaying(message)) return message.channel.send("듣고 계신거 맞죠?!")
       let volume = parseInt(args[0]);
-      if (isNaN(volume)) return message.channel.send(`\`0 ~ 100\`까지에요, 기본은 \`50%\``)
+      if (isNaN(volume) || volume > 100) return message.channel.send(`\`0 ~ 100\`까지에요, 기본은 \`50%\``)
+      try {
       client.distube.setVolume(message, volume);
       message.channel.send(`\`${volume}%\`로 설정했어요!`)
+    } catch (e) {
+      message.channel.send(`에러TV)\`${e}\``)
+    }
+
     }
   }

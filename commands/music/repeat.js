@@ -7,13 +7,13 @@ module.exports = {
       if (!client.distube.isPlaying(message)) return message.channel.send("듣고 계신거 맞죠?!")
       let mode = null;
       switch (args[0]) {
-        case "off":
+        case "끄기":
           mode = 0
           break
-        case "song":
+        case "한곡만":
           mode = 1
           break
-        case "queue":
+        case "전체":
           mode = 2
           break
       }

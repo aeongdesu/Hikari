@@ -14,6 +14,8 @@ run: async (client, message, args) => {
     .setTimestamp();
     if (!string) return message.channel.send(playEmbed)
     try {
+        message.delete();
+        message.channel.send("<a:loading:775963839862145024> 로딩중..").then(msg => {msg.delete({ timeout: 5000})})
         client.distube.play(message, string)
     } catch (e) {
         message.channel.send(`에러TV)\`${e}\``)
