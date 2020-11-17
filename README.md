@@ -10,3 +10,13 @@
 distube example bot? :>
 
 [![top.gg](https://top.gg/api/widget/719163943330906143.svg)](https://top.gg/bot/719163943330906143)
+
+
+# Dependencies
+https://github.com/karlsander/spotify-url-info
+
+https://github.com/skick1234/DisTube
+
+https://github.com/KSoft-Si/ksoft.js
+
+I love skick, karlsander, KSoftSi! <3
