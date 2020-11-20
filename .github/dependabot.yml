@@ -9,7 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      timezone: "Asia/Tokyo"
+      timezone: "Asia/Seoul"
     ignore:
       - dependency-name: "ytdl-core"
       - dependency-name: "distube"
