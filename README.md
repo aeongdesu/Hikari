@@ -3,7 +3,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/KeepSOBP/Hikari?style=for-the-badge)
 [![GitHub](https://img.shields.io/github/license/keepsobp/hikari?style=for-the-badge)](https://github.com/KeepSOBP/Hikari/blob/master/LICENSE)
 ![status](https://img.shields.io/badge/Status-Beta-yellowgreen?style=for-the-badge)
-[![CodeFactor](https://www.codefactor.io/repository/github/keepsobp/hikari/badge?style=for-the-badge)](https://www.codefactor.io/repository/github/keepsobp/hikari)
+[![GitHub CodeQL Status](https://img.shields.io/github/workflow/status/keepsobp/hikari/CodeQL?logo=github&style=for-the-badge)](https://github.com/KeepSOBP/Hikari/security/code-scanning)
 
 # Korean only music bot 😎
 
