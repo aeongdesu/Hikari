@@ -22,7 +22,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
     "@ksoft/api": "^3.1.9",
-    "discord.js-light": "^3.4.1",
+    "discord.js-light": "^3.4.2",
     "distube": "^2.8.5",
     "ffmpeg-static": "^4.2.7",
     "spotify-url-info": "^2.2.0"
