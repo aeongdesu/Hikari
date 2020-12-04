@@ -7,12 +7,12 @@ module.exports = {
   description: "노래를 틀어줘요",
   cooldown: "5",
 run: async (client, message, args) => {
-    if (!message.member.voice.channel) return message.channel.send("보이스채널에 먼저 들어가셔야 해요!")
+    if (!message.member.voice.channel) return message.channel.send("보이스채널에 먼저 들어가셔야 해요!").then(msg => {msg.delete({ timeout: 30000 }) })
     const permissions = message.channel.permissionsFor(message.client.user);
-    if (!permissions.has("CONNECT") || !permissions.has("SPEAK") || !permissions.has("MANAGE_MESSAGES")) return message.reply("히카리는 `연결`, `말하기`, `메시지 관리` 권한이 필요해요!")
-    if (!permissions.has("CONNECT")) return message.reply("유감스럽게도 저에게 `연결` 권한이 없어요 :<")
-    if (!permissions.has("SPEAK")) return message.reply("유감스럽게도 저에게 `말하기` 권한이 없어요 :<")
-    if (!permissions.has("MANAGE_MESSAGES")) return message.reply("유감스럽게도 저에게 `메시지 관리` 권한이 없어요, 히카리는 메시지 지우기만 할테니 걱정마세요!");
+    if (!permissions.has("CONNECT") || !permissions.has("SPEAK") || !permissions.has("MANAGE_MESSAGES")) return message.reply("히카리는 `연결`, `말하기`, `메시지 관리` 권한이 필요해요!").then(msg => {msg.delete({ timeout: 30000 }) })
+    if (!permissions.has("CONNECT")) return message.reply("유감스럽게도 저에게 `연결` 권한이 없어요 :<").then(msg => {msg.delete({ timeout: 30000 }) })
+    if (!permissions.has("SPEAK")) return message.reply("유감스럽게도 저에게 `말하기` 권한이 없어요 :<").then(msg => {msg.delete({ timeout: 30000 }) })
+    if (!permissions.has("MANAGE_MESSAGES")) return message.reply("유감스럽게도 저에게 `메시지 관리` 권한이 없어요, 히카리는 메시지 지우기만 할테니 걱정마세요!").then(msg => {msg.delete({ timeout: 30000 }) })
     
     let string = args.join(" ")
     let playEmbed = new MessageEmbed()
@@ -33,7 +33,7 @@ run: async (client, message, args) => {
         const spouri = spodata.uri
         message.delete();
         message.channel.send(`https://scannables.scdn.co/uri/plain/png/000000/white/640/${spouri}`)
-        message.channel.send("<a:loading:775963839862145024> 로딩중..").then(msg => {msg.delete({ timeout: 5000})})
+        message.channel.send("<a:loading:775963839862145024> 로딩중..").then(msg => {msg.delete({ timeout: 5000 })})
         return client.distube.play(message, sposearch)
         } catch (e) {
         message.channel.send(`에러TV)\`${e}\``)
