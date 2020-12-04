@@ -13,7 +13,7 @@ run: async (client, message, args) => {
 
     commands.forEach((cmd) => {
       helpEmbed.addField(
-        `**${message.client.prefix}${cmd.name} ${cmd.aliases}**`,
+        `**${message.client.prefix}${cmd.name} (${cmd.aliases})**`,
         `${cmd.description}`, true
       )
     });
