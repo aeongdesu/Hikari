@@ -8,6 +8,12 @@ module.exports = {
   cooldown: "5",
 run: async (client, message, args) => {
     if (!message.member.voice.channel) return message.channel.send("보이스채널에 먼저 들어가셔야 해요!")
+    const permissions = message.channel.permissionsFor(message.client.user);
+    if (!permissions.has("CONNECT") || !permissions.has("SPEAK") || !permissions.has("MANAGE_MESSAGES")) return message.reply("히카리는 `연결`, `말하기`, `메시지 관리` 권한이 필요해요!")
+    if (!permissions.has("CONNECT")) return message.reply("유감스럽게도 저에게 `연결` 권한이 없어요 :<")
+    if (!permissions.has("SPEAK")) return message.reply("유감스럽게도 저에게 `말하기` 권한이 없어요 :<")
+    if (!permissions.has("MANAGE_MESSAGES")) return message.reply("유감스럽게도 저에게 `메시지 관리` 권한이 없어요, 히카리는 메시지 지우기만 할테니 걱정마세요!");
+    
     let string = args.join(" ")
     let playEmbed = new MessageEmbed()
     .setTitle("Hikari :heart:")

@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 const client = new Discord.Client()
 const fs = require("fs")
-const { TOKEN, PREFIX } = require("./config.json");
+const { TOKEN, PREFIX, YTCK } = require("./config.json");
 const filters = require("./filters.json");
 const DisTube = require("distube");
 
@@ -15,7 +15,7 @@ client.aliases = new Discord.Collection();
 
 client.on("ready", () => {
   console.log(`------------------------------------\n${client.user.username} ready!`);
-  client.user.setActivity(`${PREFIX}도움 | 400+ 이상 사이트 지원! | ${client.guilds.cache.size} | Beta`);
+  client.user.setActivity(`${PREFIX}도움 | ${client.guilds.cache.size} | 보이스채널`, { type: "COMPETING" });
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
@@ -65,7 +65,8 @@ client.distube = new DisTube(client, {
   highWaterMark: 1 << 25,
   searchSongs: true,
   leaveOnEmpty: true,
-  customFilters: filters
+  customFilters: filters,
+  YoutubeCookie: YTCK
 });
 
 const status = (queue) => `음량: \`${queue.volume}%\` | 필터: \`${queue.filter || "꺼짐"}\` | 반복: \`${queue.repeatMode ? queue.repeatMode == 2 ? "전체 반복" : "한 곡만" : "꺼짐"}\` | 자동재생: \`${queue.autoplay ? "On" : "꺼짐"}\``;

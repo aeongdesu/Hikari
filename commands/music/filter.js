@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "필터",
   description: "노래에다 필터를 쏘옥!",
-  aliases: '',
+  aliases: [],
   cooldown: "5",
 run: async (client, message, args) => {
     if (!message.member.voice.channel) return message.channel.send("보이스채널에 먼저 들어가셔야 해요!")
