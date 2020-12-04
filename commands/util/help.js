@@ -12,17 +12,10 @@ run: async (client, message, args) => {
       .setColor("RANDOM");
 
     commands.forEach((cmd) => {
-      if (cmd.aliases === 0) {
-        helpEmbed.addField(
-          `**${message.client.prefix}${cmd.name}`,
-          `${cmd.description}`, true
-        )
-      } else {
       helpEmbed.addField(
         `**${message.client.prefix}${cmd.name} ${cmd.aliases}**`,
         `${cmd.description}`, true
       )
-      }
     });
 
 
