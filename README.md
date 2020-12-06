@@ -5,12 +5,10 @@
 ![status](https://img.shields.io/badge/Status-Beta-yellowgreen?style=for-the-badge)
 [![GitHub CodeQL Status](https://img.shields.io/github/workflow/status/keepsobp/hikari/CodeQL?logo=github&style=for-the-badge)](https://github.com/KeepSOBP/Hikari/security/code-scanning)
 
-# Korean only music bot 😎
-
-distube example bot? :>
-
+###### Korean only music bot, distube example bot code based
 [![top.gg](https://top.gg/api/widget/719163943330906143.svg)](https://top.gg/bot/719163943330906143)
 
+# [V2 Progress](https://github.com/KeepSOBP/Hikari/projects/1)
 
 # Dependencies
 https://github.com/karlsander/spotify-url-info
