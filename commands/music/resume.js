@@ -9,7 +9,7 @@ run: async (client, message) => {
     let queue = client.distube.getQueue(message);
     if (!queue) return message.channel.send("대기열에 노래가 없어요!")
     try {
-        message.react('👌');
+        message.react('775962682343686144');
         client.distube.resume(message)
     } catch (e) {
         message.channel.send(`에러TV)\`${e}\``)

@@ -16,5 +16,6 @@ module.exports = {
         if (islive === true) return message.channel.send("생방송은 지원하지 않아요.").then(msg => {msg.delete({ timeout: 60000 }) })
         if (atm > duration) return message.channel.send(`올바른 숫자를 입력해주세요! 현재 영상 길이는 \`${fduration}\` 에요.`).then(msg => {msg.delete({ timeout: 60000 }) })
         client.distube.seek(message, Number(atm))
+        message.react('775962682343686144');
     }
 }
