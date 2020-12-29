@@ -11,6 +11,9 @@
 
 # [V2 Progress](https://github.com/KeepSOBP/Hikari/projects/1)
 
+![](https://user-images.githubusercontent.com/50764666/103298617-1115c800-4a3e-11eb-86c0-ebd26ed88de1.jpg)
+😐 [memory leak issue](https://github.com/KeepSOBP/Hikari/issues/16)
+
 # Dependencies
 https://github.com/karlsander/spotify-url-info
 
