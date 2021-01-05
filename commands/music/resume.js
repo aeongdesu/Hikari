@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require("discord.js-light");
 module.exports = {
   name: "다시시작",
   aliases: ["다시", "다시재생"],

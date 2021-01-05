@@ -1,5 +1,5 @@
-const Discord = require("discord.js");
-const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js-light");
+const { MessageEmbed } = require("discord.js-light");
 const client = new Discord.Client()
 const fs = require("fs")
 const { TOKEN, PREFIX, YTCK } = require("./config.json");

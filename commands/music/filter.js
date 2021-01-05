@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require("discord.js-light");
 module.exports = {
   name: "필터",
   description: "노래에다 필터를 쏘옥!",

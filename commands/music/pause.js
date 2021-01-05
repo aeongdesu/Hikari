@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require("discord.js-light");
 module.exports = {
   name: "일시정지",
   aliases: ["잠깐", "잠만"],
