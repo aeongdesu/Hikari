@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("-light");
+const { MessageEmbed } = require("discord.js-light");
 var { getData } = require("spotify-url-info");
 
 module.exports = {
