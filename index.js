@@ -25,7 +25,7 @@ client.on("error", console.error);
 // Import Commands
 fs.readdir("./commands/util/", (err, files) => {
   let jsFiles = files.filter(f => f.split(".").pop() === "js")
-  if (jsFiles.length <= 0) return console.log("Could not find any commands!")
+  if (jsFiles.length <= 0) return console.log("명령어를 찾을 수 없어요!")
   jsFiles.forEach((file) => {
       let cmd = require(`./commands/util/${file}`)
       console.log(`Loaded ${file}`)
@@ -37,7 +37,7 @@ fs.readdir("./commands/util/", (err, files) => {
 // Import Music Commands
 fs.readdir("./commands/music/", (err, files) => {
     let jsFiles = files.filter(f => f.split(".").pop() === "js")
-    if (jsFiles.length <= 0) return console.log("Could not find any commands!")
+    if (jsFiles.length <= 0) return console.log("명령어를 찾을 수 없어요!")
     jsFiles.forEach((file) => {
         let cmd = require(`./commands/music/${file}`)
         console.log(`Music Loaded ${file}`)
@@ -77,7 +77,7 @@ client.on('message', async message => {
     if (now < expirationTime) {
       const timeLeft = (expirationTime - now) / 1000;
       return message.reply(
-        `Please wait ${timeLeft.toFixed(1)} more second(s) before using the \`${command.name}\` command again.`
+        `\`${command.name}\` 명령어는 ${timeLeft.toFixed(1)}초 뒤에 다시 사용하실수 있어요! <:sorry:796313836474990683>`
       );
     }
   }
