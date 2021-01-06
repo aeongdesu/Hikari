@@ -10,6 +10,8 @@ client.login(TOKEN);
 client.commands = new Discord.Collection();
 client.prefix = PREFIX;
 client.aliases = new Discord.Collection();
+const cooldowns = new Discord.Collection();
+const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 // Client events
 
@@ -46,17 +48,48 @@ fs.readdir("./commands/music/", (err, files) => {
 
 // client on!
 client.on('message', async message => {
-  if (!message.content.startsWith(PREFIX) || !message.guild || message.author.bot || message.channel.type == "dm") return
-  const args = message.content.slice(PREFIX.length).trim().split(/ +/g)
-  const command = args.shift().toLowerCase();
-  let cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command))
-  if (!cmd) return
-  try {
-      cmd.run(client, message, args)
+  if (!message.guild || message.author.bot || message.channel.type == "dm") return;
+  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(PREFIX)})\\s*`);
+  if (!prefixRegex.test(message.content)) return;
+
+  const [, matchedPrefix] = message.content.match(prefixRegex);
+
+  const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+  const commandName = args.shift().toLowerCase();
+
+  const command =
+    client.commands.get(commandName) ||
+    client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
+
+  if (!command) return;
+
+  if (!cooldowns.has(command.name)) {
+    cooldowns.set(command.name, new Discord.Collection());
   }
-  catch (e) {
-      console.error(e)
-      message.reply(`에러TV)${e}`)
+
+  const now = Date.now();
+  const timestamps = cooldowns.get(command.name);
+  const cooldownAmount = (command.cooldown || 1) * 1000;
+
+  if (timestamps.has(message.author.id)) {
+    const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
+
+    if (now < expirationTime) {
+      const timeLeft = (expirationTime - now) / 1000;
+      return message.reply(
+        `Please wait ${timeLeft.toFixed(1)} more second(s) before using the \`${command.name}\` command again.`
+      );
+    }
+  }
+
+  timestamps.set(message.author.id, now);
+  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+
+  try {
+    command.run(client, message, args);
+  } catch (error) {
+    console.error(error);
+    message.reply(`에러TV)${error}`).catch(console.error);
   }
 });
 
