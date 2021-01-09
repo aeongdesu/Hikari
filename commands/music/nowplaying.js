@@ -1,3 +1,4 @@
+/* WIP
 const { MessageEmbed } = require("discord.js-light");
 module.exports = {
   name: "정보",
@@ -12,6 +13,7 @@ run: async (client, message) => {
     const link = queue.songs.map(song => song.url)
     const user = queue.songs.map(song => song.user)
     const duration = queue.songs.map(song => song.formattedDuration)
+    const current = client.distube.getQueue(message).formattedCurrentTime
     const tn = queue.songs.map(song => song.thumbnail)
 
     const embed = new MessageEmbed()
@@ -19,7 +21,9 @@ run: async (client, message) => {
     .setColor("RANDOM")
     .setThumbnail(`${tn}`)
     .setDescription(`[${name}](${link})`)
+    .addField("추가한 멤버", `${user}`, true)
     .addField("길이", `${duration}`, true)
+    .addField("현재 시간", `${current}`, true)
     .setTimestamp();
     try {
         message.channel.send(embed)
@@ -28,3 +32,4 @@ run: async (client, message) => {
     }
 }
 }
+*/

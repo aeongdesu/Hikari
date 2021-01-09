@@ -9,6 +9,7 @@ const fs = require("fs")
 const { TOKEN, PREFIX, YTCK } = require("./config.json");
 const filters = require("./filters.json");
 const DisTube = require("distube");
+const { toColonNotation } = require('colon-notation');
 
 client.login(TOKEN);
 client.commands = new Discord.Collection();
@@ -142,7 +143,8 @@ client.distube
     .setColor("RANDOM")
     .setThumbnail(`${song.thumbnail}`)
     .addField("노래", `[\`${song.name}\` - \`${song.formattedDuration}\`](${song.url})`)
-    .addField("신청자", `${song.user}`)
+    .addField("신청자", `${song.user}`, true)
+    .addField("해당 노래 나올때까지 남은 시간", `${toColonNotation(queue.duration*1000 - song.duration*1000)}`, true)
     .setTimestamp();
         // end embed
     message.channel.send(Embed)
