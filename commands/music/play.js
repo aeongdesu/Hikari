@@ -19,7 +19,7 @@ run: async (client, message, args) => {
     let playEmbed = new MessageEmbed()
     .setTitle("Hikari :heart:")
     .setColor("RANDOM")
-    .addField("ㅑ재생 <URL>", "[수많은 사이트들을 지원해요!](https://ytdl-org.github.io/youtube-dl/supportedsites.html)\n**스포티파이도 가능해요, 단 `link.tospotify.com` 링크는 지원하지 않아요!**")
+    .addField("ㅑ재생 <URL>", "[수많은 사이트들을 지원해요!](https://ytdl-org.github.io/youtube-dl/supportedsites.html)\n**스포티파이도 가능해요, 단 플레이리스트, 트랙, 팟캐스트는 지원하지 않아요.")
     .setTimestamp();
     if (!string) return message.channel.send(playEmbed)
     // spotify

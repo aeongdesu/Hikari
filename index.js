@@ -1,8 +1,6 @@
 const Discord = require("discord.js-light");
 const { MessageEmbed } = require("discord.js-light");
 const client = new Discord.Client({
-   shardId: process.argv[1],
-   shardCount: process.argv[2],
    cacheRoles: true,
    cacheChannels: true,
    cacheVoiceStates: true

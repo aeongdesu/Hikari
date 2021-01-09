@@ -6,6 +6,6 @@ const shard = new ShardingManager('./index.js', {
   autoSpawn: true
 });
 
-shard.spawn(2);
+shard.on('shardCreate', shard => console.log(`----- [Hikari Shard] - ${shard.id} -----`));
 
-shard.on('shardCreate', shard => console.log(`[Hikari Shard]] ${shard.id} / ${shard.totalShards}`));
+shard.spawn();
