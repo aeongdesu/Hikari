@@ -1,0 +1,16 @@
+const { MessageEmbed } = require("discord.js-light");
+module.exports = {
+  name: "필터",
+  description: "노래에다 필터를 쏘옥!",
+  aliases: [],
+  cooldown: "5",
+run: async (client, message, args) => {
+    const queue = client.distube.getQueue(message)
+    if (!message.member.voice.channel) return message.channel.send("보이스채널에 먼저 들어가셔야 해요!")
+    if (!queue) return message.channel.send("대기열에 노래가 없는것 같아요!")
+    if (args[0] === "off" && queue.filter) client.distube.setFilter(message, queue.filter)
+    else if (Object.keys(client.distube.filters).includes(args[0])) client.distube.setFilter(message, args[0])
+    else if (args[0]) return message.channel.send("https://bread.shx.gg/LWn1pn.png")
+    message.channel.send(`Current Queue Filter: \`${queue.filter || "Off"}\``)
+}
+} 
