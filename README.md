@@ -3,22 +3,19 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/KeepSOBP/Hikari?style=for-the-badge)
 [![GitHub](https://img.shields.io/github/license/keepsobp/hikari?style=for-the-badge)](https://github.com/KeepSOBP/Hikari/blob/master/LICENSE)
 ![status](https://img.shields.io/badge/Status-Beta-yellowgreen?style=for-the-badge)
-[![GitHub CodeQL Status](https://img.shields.io/github/workflow/status/keepsobp/hikari/CodeQL?logo=github&style=for-the-badge)](https://github.com/KeepSOBP/Hikari/security/code-scanning)
 
 [![Discord Bots](https://top.gg/api/widget/status/719163943330906143.svg)](https://top.gg/bot/719163943330906143)
 
 ###### Korean only music bot, distube example bot code based
 
-# [V2 Progress](https://github.com/KeepSOBP/Hikari/projects/1)
+## [V2 Progress](https://github.com/KeepSOBP/Hikari/projects/1)
 
-![](https://user-images.githubusercontent.com/50764666/103298617-1115c800-4a3e-11eb-86c0-ebd26ed88de1.jpg)
-😐 [memory leak issue](https://github.com/KeepSOBP/Hikari/issues/16)
+## Dependencies
+[![](https://github-readme-stats.vercel.app/api/pin/?username=karlsander&repo=spotify-url-info&show_owner=true&theme=dark)](https://github.com/karlsander/spotify-url-info)
 
-# Dependencies
-https://github.com/karlsander/spotify-url-info
+[![](https://github-readme-stats.vercel.app/api/pin/?username=skick1234&repo=distube&show_owner=true&theme=dark)](https://github.com/skick1234/DisTube)
 
-https://github.com/distubejs/DisTube
+[![](https://github-readme-stats.vercel.app/api/pin/?username=ksoft-si&repo=ksoft.js&show_owner=true&theme=dark)](https://github.com/KSoft-Si/ksoft.js)
 
-https://github.com/KSoft-Si/ksoft.js
-
-I love skick, karlsander, KSoftSi! <3
+## Contributors
+[L0SER8228](https://github.com/L0SER8228) - [#17](https://github.com/KeepSOBP/Hikari/pull/17)
