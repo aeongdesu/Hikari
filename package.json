@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/KeepSOBP/Hikari#readme",
   "dependencies": {
-    "@discordjs/opus": "^0.3.3",
+    "@discordjs/opus": "^0.4.0",
     "@ksoft/api": "^3.1.9",
     "bufferutil": "^4.0.3",
     "colon-notation": "^1.2.1",
