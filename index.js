@@ -1,9 +1,13 @@
 const Discord = require("discord.js-light");
 const { MessageEmbed } = require("discord.js-light");
 const client = new Discord.Client({
-   cacheRoles: true,
-   cacheChannels: true,
-   cacheVoiceStates: true
+  messageCacheLifetime: 60,
+  fetchAllMembers: false,
+  messageCacheMaxSize: 10,
+  disableEveryone: true,
+  cacheRoles: true,
+  cacheChannels: true,
+  cacheVoiceStates: true
   })
 const fs = require("fs")
 const { TOKEN, PREFIX, YTCK } = require("./config.json");
