@@ -24,7 +24,7 @@
     "@ksoft/api": "^3.1.9",
     "bufferutil": "^4.0.3",
     "colon-notation": "^1.2.1",
-    "discord.js-light": "^3.5.2",
+    "discord.js-light": "^3.5.3",
     "distube": "^2.8.8",
     "erlpack": "github:discord/erlpack",
     "ffmpeg-static": "^4.2.7",
