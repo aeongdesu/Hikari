@@ -40,7 +40,20 @@ run: async (client, message, args) => {
         }
     } else if (spoplurl.test(string)) {
         try {
-        return message.channel.send("유감스럽게도 스포티파이 플레이리스트는 지원하지 않아요.")
+        const playlist = await getData(string);
+        if (!playlist) return message.channel.send("This is not a valid Spotify playlist link");
+        let items = playlist.tracks.items
+        let tracks = []
+        let s;
+        for (var i = 0; i < items.length; i++) {
+            let results = await client.distube.search(`${items[i].track.artists[0].name} - ${items[i].track.name}`);
+            if (results.length < 1) {
+               s++ // could be used later for skipped tracks due to result not being found
+               continue;
+            }
+            tracks.push(results[0].url);
+        }
+        await client.distube.playCustomPlaylist(message, tracks, { name: playlist.name });
         } catch (e) {
         return message.channel.send("유감스럽게도 스포티파이 플레이리스트는 지원하지 않아요.")
         }
