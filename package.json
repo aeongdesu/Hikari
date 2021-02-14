@@ -3,9 +3,6 @@
   "version": "1.2.0",
   "description": "discord.js Music bot for korean",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KeepSOBP/Hikari.git"
@@ -24,11 +21,12 @@
     "@ksoft/api": "^3.1.9",
     "bufferutil": "^4.0.3",
     "colon-notation": "^1.2.1",
-    "discord.js-light": "^3.5.2",
+    "discord.js-light": "^3.5.3",
     "distube": "^2.8.8",
     "erlpack": "github:discord/erlpack",
     "ffmpeg-static": "^4.2.7",
     "spotify-url-info": "^2.2.0",
+    "string-progressbar": "^1.0.3",
     "utf-8-validate": "^5.0.4",
     "zlib-sync": "^0.1.7"
   }

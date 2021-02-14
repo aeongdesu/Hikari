@@ -1,4 +1,3 @@
-const { MessageEmbed } = require("discord.js-light");
 module.exports = {
   name: "대기",
   aliases: ["대기열", "목록"],
@@ -8,14 +7,8 @@ run: async (client, message) => {
     let queue = client.distube.getQueue(message);
     if (!queue) return message.channel.send("대기열에 노래가 없어요!")
     let q = queue.songs.map((song, i) => {
-      return `${i === 0 ? "재생중:" : `${i}.`} ${song.name} - \`${song.formattedDuration}\``
+      return `${i === 0 ? `- 재생중: ${song.name} [${song.formattedDuration}]\n` : `${i}. ${song.name} [${song.formattedDuration}]`}`
     }).join("\n");
-
-    let playEmbed = new MessageEmbed()
-    .setTitle("Hikari :heart:")
-    .setColor("RANDOM")
-    .addField("대기열", q)
-    .setTimestamp();
-    message.channel.send(playEmbed)
+    message.channel.send(`# 대기열\n\n${q}`, {code: "markdown"})
   }
 }

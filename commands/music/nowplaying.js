@@ -1,5 +1,6 @@
-/* WIP
 const { MessageEmbed } = require("discord.js-light");
+const createBar = require('string-progressbar');
+const { toColonNotation } = require('colon-notation');
 module.exports = {
   name: "정보",
   aliases: ["노래정보"],
@@ -9,22 +10,25 @@ run: async (client, message) => {
     if (!message.member.voice.channel) return message.channel.send("보이스채널에 먼저 들어가셔야 해요!")
     if (!client.distube.isPlaying(message)) return message.channel.send("듣고 계신거 맞죠?!")
     const queue = client.distube.getQueue(message);
-    const name = queue.songs.map(song => song.name)
-    const link = queue.songs.map(song => song.url)
-    const user = queue.songs.map(song => song.user)
-    const duration = queue.songs.map(song => song.formattedDuration)
-    const current = client.distube.getQueue(message).formattedCurrentTime
-    const tn = queue.songs.map(song => song.thumbnail)
+    const name = queue.songs.map(song => song.name);
+    const user = queue.songs.map(song => song.user);
+    // const avatar = message.author.displayAvatarURL({ dynamic: true, format: "png" });
+    const link = queue.songs.map(song => song.url);
+    const time = queue.songs.map(song => song.duration) * 1000;
+    const currenttime = queue.currentTime;
+    const tn = queue.songs.map(song => song.thumbnail);
+    const remaining = (time - currenttime) < 0 ? `◉ LIVE` : time - currenttime;
 
+    var total = time;
+    var current = currenttime;
     const embed = new MessageEmbed()
-    .setTitle("재생중")
     .setColor("RANDOM")
     .setThumbnail(`${tn}`)
-    .setDescription(`[${name}](${link})`)
-    .addField("추가한 멤버", `${user}`, true)
-    .addField("길이", `${duration}`, true)
-    .addField("현재 시간", `${current}`, true)
-    .setTimestamp();
+    .setTitle(name)
+    .setURL(`${link}`)
+    .addField(`${createBar(time === 0 ? currenttime : time, currenttime, 10)[0]} \`[${queue.formattedCurrentTime}/${queue.songs.map(song => song.formattedDuration)}]\``, `\u200b`, false)
+    .addField("신청자", user, false)
+    .setFooter(`남은 시간 : \`${toColonNotation(remaining)}\``);
     try {
         message.channel.send(embed)
     } catch (e) {
@@ -32,4 +36,3 @@ run: async (client, message) => {
     }
 }
 }
-*/

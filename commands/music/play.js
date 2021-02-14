@@ -19,17 +19,19 @@ run: async (client, message, args) => {
     let playEmbed = new MessageEmbed()
     .setTitle("Hikari :heart:")
     .setColor("RANDOM")
-    .addField("ㅑ재생 <URL>", "[수많은 사이트들을 지원해요!](https://ytdl-org.github.io/youtube-dl/supportedsites.html)\n**스포티파이도 가능해요, 단 플레이리스트, 트랙, 팟캐스트는 지원하지 않아요.")
+    .addField("ㅑ재생 <URL>", "[수많은 사이트들을 지원해요!](https://ytdl-org.github.io/youtube-dl/supportedsites.html)\n**Spotify도 가능해요, 단 팟캐스트, 앨범은 지원하지 않아요.**")
     .setTimestamp();
     if (!string) return message.channel.send(playEmbed)
     // spotify
-    // |link\.tospotify\.com not supported now
     let spourl = /^(https?:\/\/)+?(www\.)?(open\.spotify\.com)\/(track)\/.+$/gi
+    let spoalurl = /^(https?:\/\/)+?(www\.)?(open\.spotify\.com)\/(album)\/.+$/gi
     let spoplurl = /^(https?:\/\/)+?(www\.)?(open\.spotify\.com)\/(playlist)\/.+$/gi
-    let sponoturl = /^(https?:\/\/)+?(www\.)?(link\.tospotify\.com)\/.+$/gi
+    let sposhowurl = /^(https?:\/\/)+?(www\.)?(open\.spotify\.com)\/(show)\/.+$/gi
+    let spoepiurl = /^(https?:\/\/)+?(www\.)?(open\.spotify\.com)\/(episode)\/.+$/gi
     if (spourl.test(string)) {
         try {
         const spodata = await getData(string);  
+        if (!spodata) return message.channel.send("올바르지 않은 Spotify 링크입니다.");
         const sposearch = spodata.name
         const spouri = spodata.uri
         message.channel.send(`https://scannables.scdn.co/uri/plain/png/000000/white/640/${spouri}`)
@@ -38,10 +40,13 @@ run: async (client, message, args) => {
         } catch (e) {
         message.channel.send(`에러TV)\`${e}\``)
         }
+    } else if (spoalurl.test(string)) {
+        return message.channel.send("유감스럽게도 Spotify 앨범은 지원하지 않아요, 곧 지원할 예정이니 기대해주세요!")
     } else if (spoplurl.test(string)) {
         try {
         const playlist = await getData(string);
-        if (!playlist) return message.channel.send("This is not a valid Spotify playlist link");
+        if (!playlist) return message.channel.send("올바르지 않은 Spotify 링크입니다.");
+        message.channel.send("<a:loading:775963839862145024> 로딩중.. *시간이 많이 걸릴수도 있습니다.*")
         let items = playlist.tracks.items
         let tracks = []
         let s;
@@ -55,21 +60,17 @@ run: async (client, message, args) => {
         }
         await client.distube.playCustomPlaylist(message, tracks, { name: playlist.name });
         } catch (e) {
-        return message.channel.send("유감스럽게도 스포티파이 플레이리스트는 지원하지 않아요.")
+            message.channel.send(`에러TV)\`${e}\``)
         }
-    } else if (sponoturl.test(string)) {
+    } else if (sposhowurl.test(string) || spoepiurl.test(string)) {
+        return message.channel.send("유감스럽게도 Spotify 팟캐스트는 지원하지 않아요.")
+    } else if (!spourl.test(string) || !spoalurl.test(string) || !spoplurl.test(string) || !sposhowurl.test(string) || !spoepiurl.test(string)) {
         try {
-        return message.channel.send("유감스럽게도 `link.tospotify.com` 링크는 지원하지 않아요.")
+            message.channel.send("<a:loading:775963839862145024> 로딩중..")
+            client.distube.play(message, string)
         } catch (e) {
-        return message.channel.send("유감스럽게도 `link.tospotify.com` 링크는 지원하지 않아요.")
+            message.channel.send(`에러TV)\`${e}\``)
         }
-    } else if (!spourl.test(string) || !spoplurl.test(string) || !sponoturl.test(string)) {
-    try {
-        message.channel.send("<a:loading:775963839862145024> 로딩중..")
-        client.distube.play(message, string)
-    } catch (e) {
-        message.channel.send(`에러TV)\`${e}\``)
     }
-}
 }
 }
