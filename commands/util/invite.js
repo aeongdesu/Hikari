@@ -9,7 +9,7 @@ module.exports = {
         const invite = new MessageEmbed()
             .setTitle("히카리 초대링크")
             .setColor("RANDOM")
-            .setDescription("https://discord.com/oauth2/authorize?client_id=719163943330906143&scope=bot&permissions=3509312")
+            .setDescription("https://discord.com/oauth2/authorize?client_id=719163943330906143&scope=bot&permissions=3247104")
         invite.setTimestamp()
 
         return message.channel.send(invite).catch(console.error)
