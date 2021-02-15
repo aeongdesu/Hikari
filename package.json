@@ -1,0 +1,40 @@
+{
+  "name": "hikari",
+  "version": "1.2.0",
+  "description": "discord.js Music bot for korean",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeepSOBP/Hikari.git"
+  },
+  "keywords": [
+    "discordjs"
+  ],
+  "author": "KeepSOBP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KeepSOBP/Hikari/issues"
+  },
+  "homepage": "https://github.com/KeepSOBP/Hikari#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.4.0",
+    "@ksoft/api": "^3.1.9",
+    "bufferutil": "^4.0.3",
+    "colon-notation": "^1.2.1",
+    "discord.js-light": "^3.5.3",
+    "distube": "^2.8.8",
+    "erlpack": "github:discord/erlpack",
+    "ffmpeg-static": "^4.2.7",
+    "spotify-url-info": "^2.2.0",
+    "string-progressbar": "^1.0.3",
+    "utf-8-validate": "^5.0.4",
+    "zlib-sync": "^0.1.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1"
+  }
+}

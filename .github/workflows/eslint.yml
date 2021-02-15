@@ -1,0 +1,12 @@
+name: eslint reviewdog
+on: [pull_request]
+jobs:
+  eslint:
+    name: reviewdog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: eslint
+        uses: reviewdog/action-eslint@master
+        with:
+          reporter: github-pr-review
