@@ -132,11 +132,13 @@ client.distube
         const Embed = new MessageEmbed()
             .setTitle(":white_check_mark: 재생중")
             .setColor("RANDOM")
-            .setThumbnail(`${song.thumbnail}`)
             .addField("노래", `[\`${song.name}\` - \`${song.formattedDuration}\`](${song.url})`)
             .addField("신청자", `${song.user}`)
             .addField("상태", `${status(queue)}`)
             .setTimestamp()
+        if (!song.thumbnail === null) {
+            Embed.setThumbnail(`${song.thumbnail}`)
+        }
         // end embed
         message.channel.send(Embed)
     })
@@ -146,11 +148,13 @@ client.distube
         const Embed = new MessageEmbed()
             .setTitle(":white_check_mark: 추가 완료")
             .setColor("RANDOM")
-            .setThumbnail(`${song.thumbnail}`)
             .addField("노래", `[\`${song.name}\` - \`${song.formattedDuration}\`](${song.url})`)
             .addField("신청자", `${song.user}`, true)
             .addField("해당 노래 나올때까지 남은 시간", `${toColonNotation(queue.duration * 1000 - song.duration * 1000)}`, true)
             .setTimestamp()
+        if (!song.thumbnail === null) {
+            Embed.setThumbnail(`${song.thumbnail}`)
+        }
         // end embed
         message.channel.send(Embed)
     })
@@ -174,7 +178,7 @@ client.distube
             .setTitle(":white_check_mark: 추가 완료")
             .setColor("RANDOM")
             .addField("플레이리스트", `\`${playlist.name}\``)
-            .addField("노래", `${playlist.songs.length}개의 노래를 넣었어요!`)
+            .addField("노래", `${playlist.songs.length}개의 노래를 넣었어요.`)
             .addField("상태", `${status(queue)}`)
             .setTimestamp()
         // end embed
@@ -203,7 +207,7 @@ client.distube
         const Embed = new MessageEmbed()
             .setTitle("노래가 끝났어요!")
             .setColor("RANDOM")
-            .setDescription("더이상 듣기 싫으신다면 `ㅑ나가` 명령어를 입력해주세요!")
+            .setDescription("더이상 듣기를 원치 않는다면 `ㅑ나가` 명령어를 입력해주세요.")
         // end embed
         message.channel.send(Embed)
     })

@@ -20,15 +20,17 @@ module.exports = {
         const currenttime = queue.currentTime
         const tn = song.thumbnail
         const remaining = (time - currenttime) < 0 ? "◉ LIVE" : time - currenttime
-        const embed = new MessageEmbed()
-            .setColor("RANDOM")
-            .setThumbnail(`${tn}`)
-            .setAuthor(user, avatar)
-            .setTitle(name)
-            .setURL(`${link}`)
-            .setDescription(`${createBar(time === 0 ? currenttime : time, currenttime, 10)[0]} \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\`\n` +
-            `${client.distube.isPaused(message) === true ? ":pause_button:" : ":arrow_forward:"} | 남은 시간: \`${toColonNotation(remaining)}\``)
         try {
+            const embed = new MessageEmbed()
+                .setColor("RANDOM")
+                .setAuthor(user, avatar)
+                .setTitle(name)
+                .setURL(`${link}`)
+                .setDescription(`${createBar(time === 0 ? currenttime : time, currenttime, 10)[0]} \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\`\n` +
+                `${client.distube.isPaused(message) === true ? ":pause_button:" : ":arrow_forward:"} ${time === 0 ? "" : `| 남은 시간: \`${toColonNotation(remaining)}\``}`)
+            if (!song.thumbnail === null) {
+                embed.setThumbnail(`${tn}`)
+            }
             message.channel.send(embed)
         } catch (e) {
             message.channel.send(`에러TV)\`${e}\``)
