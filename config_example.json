@@ -1,8 +1,8 @@
 {
-    "//": "TOKEN : discord token, KOKEN : ksoft token, YTCK : optional, youtube cookie, OWNERID : your discord user id for use eval command",
+    "//": "TOKEN : discord token, KOKEN : ksoft token, YTCK : optional, youtube cookie, TOPKEN : top.gg bot token",
     "PREFIX": "",
     "TOKEN": "",
     "KOKEN": "",
     "YTCK": "",
-    "OWNERID": ""
+    "TOPKEN": ""
 }

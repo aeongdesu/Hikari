@@ -4,16 +4,15 @@ const client = new Discord.Client({
     messageCacheLifetime: 60,
     fetchAllMembers: false,
     messageCacheMaxSize: 10,
-    disableEveryone: true,
     cacheRoles: true,
-    cacheChannels: true,
-    cacheVoiceStates: true
+    cacheChannels: true
 })
 const fs = require("fs")
-const { TOKEN, PREFIX, YTCK } = require("./config.json")
+const { TOKEN, PREFIX, YTCK, TOPKEN } = require("./config.json")
 const filters = require("./filters.json")
 const DisTube = require("distube")
 const { toColonNotation } = require("colon-notation")
+const AutoPoster = require("topgg-autoposter") // delete if you dont use top.gg
 
 client.login(TOKEN)
 client.commands = new Discord.Collection()
@@ -22,24 +21,29 @@ client.aliases = new Discord.Collection()
 const cooldowns = new Discord.Collection()
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 
-const cstatuslist = [
-    `${PREFIX}도움 | 보이스채널`,
-    `${PREFIX}초대 | 보이스채널`
-]
-
 // Client events
 
 client.on("ready", () => {
     console.log(`------------------------------------\n${client.user.username} ready!`)
+    const cstatuslist = [
+        `${PREFIX}도움 | 보이스채널`,
+        `${PREFIX}초대 | 보이스채널`,
+        `${client.guilds.cache.size}개의 서버에 제가 있어요! | 보이스채널`
+    ]
     setInterval(() => {
         const index = Math.floor(Math.random() * cstatuslist.length)
         client.user.setActivity(cstatuslist[index], { type: "COMPETING" })
     }, 10000)
+
+    // delete if you dont use top.gg
+    const ap = AutoPoster(TOPKEN, client)
+    console.log("Post stats to top.gg..")
+    ap.on("posted", () => {
+        console.log("Posted stats to top.gg!")
+    })
 })
 
-/* Debug
-client.on("debug", (e) => console.info(e));
-*/
+// Debug | client.on("debug", (e) => console.info(e))
 client.on("warn", (info) => console.log(info))
 client.on("error", console.error)
 
@@ -67,7 +71,7 @@ fs.readdir("./commands/music/", (_err, files) => {
     })
 })
 
-// client on!
+// client on
 client.on("message", async message => {
     if (!message.guild || message.author.bot || message.channel.type === "dm") return
     const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(PREFIX)})\\s*`)
