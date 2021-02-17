@@ -19,6 +19,5 @@
     "haas": "haas",
     "mcompand": "mcompand",
     "double": "atempo=1.5",
-    "half": "atempo=0.5",
-    "끄기": "atempo=1"
+    "half": "atempo=0.5"
 }
