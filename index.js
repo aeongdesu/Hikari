@@ -24,14 +24,16 @@ const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 
 client.on("ready", () => {
     console.log(`------------------------------------\n${client.user.username} ready!`)
+    const server = client.guilds.cache.size
+    const voiceserver = client.voice.connections.size
     const cstatuslist = [
-        `${PREFIX}도움 | 보이스채널`,
-        `${PREFIX}초대 | 보이스채널`,
-        `${client.guilds.cache.size}개의 서버에 제가 있어요! | 보이스채널`
+        `${PREFIX}도움`,
+        `${PREFIX}초대`,
+        `${voiceserver}/${server} 서버`
     ]
     setInterval(() => {
         const index = Math.floor(Math.random() * cstatuslist.length)
-        client.user.setActivity(cstatuslist[index], { type: "COMPETING" })
+        client.user.setActivity(cstatuslist[index] + " | 보이스채널", { type: "COMPETING" })
     }, 10000)
 
     // delete if you dont use top.gg
