@@ -11,7 +11,6 @@ const fs = require("fs")
 const { TOKEN, PREFIX, YTCK, TOPKEN } = require("./config.json")
 const filters = require("./filters.json")
 const DisTube = require("distube")
-const { toColonNotation } = require("colon-notation")
 const AutoPoster = require("topgg-autoposter") // delete if you dont use top.gg
 
 client.login(TOKEN)
@@ -154,7 +153,6 @@ client.distube
             .setColor("RANDOM")
             .addField("노래", `[\`${song.name}\` - \`${song.formattedDuration}\`](${song.url})`)
             .addField("신청자", `${song.user}`, true)
-            .addField("해당 노래 나올때까지 남은 시간", `${toColonNotation(queue.duration * 1000 - song.duration * 1000)}`, true)
             .setTimestamp()
         if (!song.thumbnail === null) {
             Embed.setThumbnail(`${song.thumbnail}`)
