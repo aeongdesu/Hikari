@@ -22,7 +22,7 @@
     "bufferutil": "^4.0.3",
     "colon-notation": "^1.2.1",
     "discord.js-light": "^3.5.3",
-    "distube": "^2.8.8",
+    "distube": "^2.8.9",
     "erlpack": "github:discord/erlpack",
     "ffmpeg-static": "^4.2.7",
     "spotify-url-info": "^2.2.0",
