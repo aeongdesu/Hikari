@@ -145,6 +145,7 @@ client.distube
         }
         // end embed
         message.channel.send(Embed)
+        queue.connection.voice.setSelfDeaf(true)
     })
 
     .on("addSong", (message, queue, song) => {
@@ -174,6 +175,7 @@ client.distube
             .setTimestamp()
         // end embed
         message.channel.send(Embed)
+        queue.connection.voice.setSelfDeaf(true)
     })
     .on("addList", (message, queue, playlist) => {
         // embed
@@ -189,7 +191,6 @@ client.distube
     })
     .on("initQueue", queue => {
         queue.autoplay = false
-        queue.connection.voice.setSelfDeaf(true)
     })
     // DisTubeOptions.searchSongs = true
     .on("searchResult", (message, result) => {
