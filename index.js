@@ -132,7 +132,6 @@ const status = (queue) => `음량: \`${queue.volume}%\` | 필터: \`${queue.filt
 
 client.distube
     .on("playSong", (message, queue, song) => {
-        queue.connection.voice.setSelfDeaf(true) // SelfDeaf
         // embed
         const Embed = new MessageEmbed()
             .setTitle(":white_check_mark: 재생중")
@@ -190,6 +189,7 @@ client.distube
     })
     .on("initQueue", queue => {
         queue.autoplay = false
+        queue.connection.voice.setSelfDeaf(true)
     })
     // DisTubeOptions.searchSongs = true
     .on("searchResult", (message, result) => {
