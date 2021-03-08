@@ -36,7 +36,7 @@ module.exports = {
                 message.channel.send("<a:loading:775963839862145024> 로딩중..")
                 return client.distube.play(message, sposearch)
             } catch (e) {
-                message.channel.send(`에러TV)\`${e}\``)
+                message.channel.send(`에러가 발생했습니다.\n\`${e}\``)
             }
         } else if (spoalurl.test(string)) {
             return message.channel.send("유감스럽게도 Spotify 앨범은 지원하지 않아요, 곧 지원할 예정이니 기대해주세요!")
@@ -59,7 +59,7 @@ module.exports = {
                 }
                 await client.distube.playCustomPlaylist(message, tracks, { name: playlist.name })
             } catch (e) {
-                message.channel.send(`에러TV)\`${e}\``)
+                message.channel.send(`에러가 발생했습니다.\n\`${e}\``)
             }
         } else if (sposhowurl.test(string) || spoepiurl.test(string)) {
             return message.channel.send("유감스럽게도 Spotify 팟캐스트는 지원하지 않아요.")
@@ -68,7 +68,7 @@ module.exports = {
                 message.channel.send("<a:loading:775963839862145024> 로딩중..")
                 client.distube.play(message, string)
             } catch (e) {
-                message.channel.send(`에러TV)\`${e}\``)
+                message.channel.send(`에러가 발생했습니다.\n\`${e}\``)
             }
         }
     }

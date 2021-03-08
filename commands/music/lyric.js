@@ -21,7 +21,7 @@ module.exports = {
         const ksoft = new KSoftClient(KOKEN)
         const lyric = await ksoft.lyrics.get(string, false)
             .catch(err => {
-                return message.channel.send(`에러TV) \`${err}\` `)
+                return message.channel.send(`에러가 발생했습니다.\n\`${err}\` `)
             })
 
         if (!lyric.lyrics) return msg.delete()

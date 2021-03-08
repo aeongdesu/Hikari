@@ -11,7 +11,7 @@ module.exports = {
             message.channel.send("노래를 다시 재생시켰어요. :musical_note:")
             client.distube.resume(message)
         } catch (e) {
-            message.channel.send(`에러TV)\`${e}\``)
+            message.channel.send(`에러가 발생했습니다.\n\`${e}\``)
         }
     }
 }

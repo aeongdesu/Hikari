@@ -115,7 +115,7 @@ client.on("message", async message => {
         command.run(client, message, args)
     } catch (error) {
         console.error(error)
-        message.reply(`에러TV)${error}`).catch(console.error)
+        message.reply(`에러가 발생했습니다.\n${error}`).catch(console.error)
     }
 })
 
@@ -217,5 +217,5 @@ client.distube
         message.channel.send(Embed)
     })
     .on("searchCancel", (message) => message.channel.send(":thinking: 취소됐어요!"))
-    .on("error", (message, err) => message.channel.send(`에러TV)${err}`))
+    .on("error", (message, err) => message.channel.send(`에러가 발생했습니다.\n${err}`))
     .on("noRelated", message => message.channel.send("404 video not found"))

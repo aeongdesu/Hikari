@@ -12,7 +12,7 @@ module.exports = {
             client.distube.setVolume(message, volume)
             message.channel.send(`\`${volume}%\`로 설정했어요!`)
         } catch (e) {
-            message.channel.send(`에러TV)\`${e}\``)
+            message.channel.send(`에러가 발생했습니다.\n\`${e}\``)
         }
     }
 }

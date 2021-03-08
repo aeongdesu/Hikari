@@ -13,7 +13,7 @@ module.exports = {
             message.channel.send("노래를 일시정지 시켰어요, *다시 재생하려면 한번더 입력해주시거나 `ㅑ다시`를 입력해주세요.*")
             client.distube.pause(message)
         } catch (e) {
-            message.channel.send(`에러TV)\`${e}\``)
+            message.channel.send(`에러가 발생했습니다.\n\`${e}\``)
         }
     }
 }

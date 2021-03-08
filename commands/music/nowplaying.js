@@ -33,7 +33,7 @@ module.exports = {
             }
             message.channel.send(embed)
         } catch (e) {
-            message.channel.send(`에러TV)\`${e}\``)
+            message.channel.send(`에러가 발생했습니다.\n\`${e}\``)
         }
     }
 }
