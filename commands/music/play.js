@@ -17,7 +17,7 @@ module.exports = {
         const playEmbed = new MessageEmbed()
             .setTitle("Hikari :heart:")
             .setColor("RANDOM")
-            .addField("ㅑ재생 <URL>", "[수많은 사이트들을 지원해요!](https://ytdl-org.github.io/youtube-dl/supportedsites.html)\n**Spotify도 가능해요, 단 팟캐스트, 앨범은 지원하지 않아요.**")
+            .addField(`${client.prefix}재생 <URL>`, "[수많은 사이트들을 지원해요!](https://ytdl-org.github.io/youtube-dl/supportedsites.html)\n**Spotify도 가능해요, 단 팟캐스트, 앨범은 지원하지 않아요.**")
             .setTimestamp()
         if (!string) return message.channel.send(playEmbed)
         // spotify
