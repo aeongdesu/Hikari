@@ -12,6 +12,6 @@ module.exports = {
             .setDescription("https://discord.com/oauth2/authorize?client_id=719163943330906143&scope=bot&permissions=3247104")
         invite.setTimestamp()
 
-        return message.channel.send(invite).catch(console.error)
+        return message.channel.send(invite)
     }
 }
