@@ -13,8 +13,8 @@ const filters = require("./filters.json")
 const DisTube = require("distube")
 const AutoPoster = require("topgg-autoposter") // delete if you dont use top.gg
 const CatLoggr = require("cat-loggr")
-const logger = new CatLoggr()
 
+client.logger = new CatLoggr()
 client.login(TOKEN)
 client.commands = new Discord.Collection()
 client.prefix = PREFIX
@@ -25,7 +25,7 @@ const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 // Client events
 
 client.on("ready", () => {
-    logger.info(`${client.user.username} ready!`)
+    client.logger.info(`${client.user.username} ready!`)
     const server = client.guilds.cache.size
     const cstatuslist = [
         `${PREFIX}도움`,
@@ -42,16 +42,16 @@ client.on("ready", () => {
 })
 
 // Debug | client.on("debug", (e) => logger.log(e))
-client.on("warn", (info) => logger.warn(info))
-client.on("error", (error) => logger.error(error))
+client.on("warn", (info) => client.logger.warn(info))
+client.on("error", (error) => client.logger.error(error))
 
 // Import Commands
 fs.readdir("./commands/util/", (_err, files) => {
     const jsFiles = files.filter(f => f.split(".").pop() === "js")
-    if (jsFiles.length <= 0) return logger.error("명령어를 찾을 수 없어요!")
+    if (jsFiles.length <= 0) return client.logger.error("명령어를 찾을 수 없어요!")
     jsFiles.forEach((file) => {
         const cmd = require(`./commands/util/${file}`)
-        logger.init(`Loaded ${file}`)
+        client.logger.init(`Loaded ${file}`)
         client.commands.set(cmd.name, cmd)
         if (cmd.aliases) cmd.aliases.forEach(alias => client.aliases.set(alias, cmd.name))
     })
@@ -60,10 +60,10 @@ fs.readdir("./commands/util/", (_err, files) => {
 // Import Music Commands
 fs.readdir("./commands/music/", (_err, files) => {
     const jsFiles = files.filter(f => f.split(".").pop() === "js")
-    if (jsFiles.length <= 0) return logger.error("명령어를 찾을 수 없어요!")
+    if (jsFiles.length <= 0) return client.logger.error("명령어를 찾을 수 없어요!")
     jsFiles.forEach((file) => {
         const cmd = require(`./commands/music/${file}`)
-        logger.init(`Music Loaded ${file}`)
+        client.logger.init(`Music Loaded ${file}`)
         client.commands.set(cmd.name, cmd)
         if (cmd.aliases) cmd.aliases.forEach(alias => client.aliases.set(alias, cmd.name))
     })
@@ -111,8 +111,8 @@ client.on("message", async message => {
     try {
         command.run(client, message, args)
     } catch (error) {
-        logger.error(error)
-        message.reply(`에러가 발생했습니다.\n${error}`).catch(logger.error)
+        client.logger.error(error)
+        message.reply(`에러가 발생했습니다.\n${error}`).catch(client.logger.error)
     }
 })
 
