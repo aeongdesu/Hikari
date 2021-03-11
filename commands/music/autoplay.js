@@ -1,7 +1,7 @@
 module.exports = {
     name: "자동재생",
     aliases: ["알고리즘"],
-    description: "모든건 알고리즘에 맡겠다",
+    description: "자동재생을 해줘요",
     cooldown: "5",
     run: async (client, message) => {
         try {
