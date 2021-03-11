@@ -12,6 +12,8 @@ const { TOKEN, PREFIX, YTCK, TOPKEN } = require("./config.json")
 const filters = require("./filters.json")
 const DisTube = require("distube")
 const AutoPoster = require("topgg-autoposter") // delete if you dont use top.gg
+const CatLoggr = require("cat-loggr")
+const logger = new CatLoggr()
 
 client.login(TOKEN)
 client.commands = new Discord.Collection()
@@ -23,7 +25,7 @@ const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 // Client events
 
 client.on("ready", () => {
-    console.log(`------------------------------------\n${client.user.username} ready!`)
+    logger.info(`${client.user.username} ready!`)
     const server = client.guilds.cache.size
     const voiceserver = client.voice.connections.size
     const cstatuslist = [
@@ -38,23 +40,23 @@ client.on("ready", () => {
 
     // delete if you dont use top.gg
     const ap = AutoPoster(TOPKEN, client)
-    console.log("Post stats to top.gg..")
+    logger.info("Post stats to top.gg..")
     ap.on("posted", () => {
-        console.log("Posted stats to top.gg!")
+        logger.info("Posted stats to top.gg!")
     })
 })
 
-// Debug | client.on("debug", (e) => console.info(e))
-client.on("warn", (info) => console.log(info))
-client.on("error", console.error)
+// Debug | client.on("debug", (e) => logger.log(e))
+client.on("warn", (info) => logger.warn(info))
+client.on("error", (error) => logger.error(error))
 
 // Import Commands
 fs.readdir("./commands/util/", (_err, files) => {
     const jsFiles = files.filter(f => f.split(".").pop() === "js")
-    if (jsFiles.length <= 0) return console.log("명령어를 찾을 수 없어요!")
+    if (jsFiles.length <= 0) return logger.error("명령어를 찾을 수 없어요!")
     jsFiles.forEach((file) => {
         const cmd = require(`./commands/util/${file}`)
-        console.log(`Loaded ${file}`)
+        logger.init(`Loaded ${file}`)
         client.commands.set(cmd.name, cmd)
         if (cmd.aliases) cmd.aliases.forEach(alias => client.aliases.set(alias, cmd.name))
     })
@@ -63,10 +65,10 @@ fs.readdir("./commands/util/", (_err, files) => {
 // Import Music Commands
 fs.readdir("./commands/music/", (_err, files) => {
     const jsFiles = files.filter(f => f.split(".").pop() === "js")
-    if (jsFiles.length <= 0) return console.log("명령어를 찾을 수 없어요!")
+    if (jsFiles.length <= 0) return logger.error("명령어를 찾을 수 없어요!")
     jsFiles.forEach((file) => {
         const cmd = require(`./commands/music/${file}`)
-        console.log(`Music Loaded ${file}`)
+        logger.init(`Music Loaded ${file}`)
         client.commands.set(cmd.name, cmd)
         if (cmd.aliases) cmd.aliases.forEach(alias => client.aliases.set(alias, cmd.name))
     })
@@ -114,8 +116,8 @@ client.on("message", async message => {
     try {
         command.run(client, message, args)
     } catch (error) {
-        console.error(error)
-        message.reply(`에러가 발생했습니다.\n${error}`).catch(console.error)
+        logger.error(error)
+        message.reply(`에러가 발생했습니다.\n${error}`).catch(logger.error)
     }
 })
 
@@ -212,7 +214,7 @@ client.distube
         const Embed = new MessageEmbed()
             .setTitle("노래가 끝났어요!")
             .setColor("RANDOM")
-            .setDescription("더이상 듣기를 원치 않는다면 `ㅑ나가` 명령어를 입력해주세요.")
+            .setDescription(`더이상 듣기를 원치 않는다면 \`${PREFIX}나가\` 명령어를 입력해주세요.`)
         // end embed
         message.channel.send(Embed)
     })
