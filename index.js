@@ -39,11 +39,7 @@ client.on("ready", () => {
     }, 10000)
 
     // delete if you dont use top.gg
-    const ap = AutoPoster(TOPKEN, client)
-    logger.info("Post stats to top.gg..")
-    ap.on("posted", () => {
-        logger.info("Posted stats to top.gg!")
-    })
+    AutoPoster(TOPKEN, client)
 })
 
 // Debug | client.on("debug", (e) => logger.log(e))
