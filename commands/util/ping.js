@@ -1,7 +1,7 @@
 module.exports = {
     name: "핑",
     aliases: [],
-    description: "에이 좋을거라 믿어요",
+    description: "히카리의 핑을 확인해요",
     cooldown: "5",
     run: async (client, message, args) => {
         const ping = Math.round(client.ws.ping)
