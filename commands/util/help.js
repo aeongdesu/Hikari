@@ -6,21 +6,25 @@ module.exports = {
     description: "명령어들을 보여줘요",
     cooldown: "5",
     run: async (client, message) => {
-        const commands = message.client.commands.array()
+        try {
+            const commands = message.client.commands.array()
 
-        const helpEmbed = new MessageEmbed()
-            .setTitle("Hikari Help :heart:")
-            .setColor("RANDOM")
+            const helpEmbed = new MessageEmbed()
+                .setTitle("히카리 명령어")
+                .setColor("RANDOM")
 
-        commands.forEach((cmd) => {
-            helpEmbed.addField(
-                `**${message.client.prefix}${cmd.name} (${cmd.aliases})**`,
-                `${cmd.description}`, true
-            )
-        })
+            commands.forEach((cmd) => {
+                helpEmbed.addField(
+                    `**${message.client.prefix}${cmd.name} (${cmd.aliases})**`,
+                    `${cmd.description}`, true
+                )
+            })
 
-        helpEmbed.setTimestamp()
+            helpEmbed.setFooter("Bread#2635", null)
 
-        return message.channel.send(helpEmbed).catch(console.error)
+            return message.channel.send(helpEmbed)
+        } catch (e) {
+            client.logger.error(e)
+        }
     }
 }
