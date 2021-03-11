@@ -27,11 +27,10 @@ const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 client.on("ready", () => {
     logger.info(`${client.user.username} ready!`)
     const server = client.guilds.cache.size
-    const voiceserver = client.voice.connections.size
     const cstatuslist = [
         `${PREFIX}도움`,
         `${PREFIX}초대`,
-        `${voiceserver}/${server} 서버`
+        `${server} 서버`
     ]
     setInterval(() => {
         const index = Math.floor(Math.random() * cstatuslist.length)
