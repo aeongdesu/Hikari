@@ -4,10 +4,10 @@ dependencies:
   bufferutil: 4.0.3
   cat-loggr: 1.1.0
   colon-notation: 1.2.1
-  discord.js-light: 3.5.4_51c459e18ff0a6c20d1e9f4e1452f83a
-  distube: 2.8.10_47fb6477e8c5c7e421a7b0bdcce840dd
+  discord.js-light: 3.5.4_c0f6113ac04fc1873313a2e44a0db9f4
+  distube: 2.8.11_88ecd7e632ffa1f42dd505d20cc321c6
   erlpack: github.com/discord/erlpack/e27db8f82892bdb9b28a0547cc394d68b5d2242d
-  ffmpeg-static: 4.2.7
+  ffmpeg-static: 4.2.8
   spotify-url-info: 2.2.0
   statcord.js: 3.1.7
   string-progressbar: 1.0.3
@@ -106,15 +106,17 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-dvspiNhCIry/LPm9EkHPgGk8bTBfrENH282jNzwz5EAnn+xZF+wCDk9033fnVBY5RA1sPKSUol2MeQHgRD5/zQ==
-  /@distube/ytdl/1.0.7_47fb6477e8c5c7e421a7b0bdcce840dd:
+  /@distube/ytdl/2.0.5_d8f3ff8b0fecdbff59ae3ce5169f6109:
     dependencies:
-      prism-media: 1.2.8_47fb6477e8c5c7e421a7b0bdcce840dd
+      prism-media: 1.2.8_88ecd7e632ffa1f42dd505d20cc321c6
+      ytdl-core: 4.5.0
     dev: false
     peerDependencies:
       '@discordjs/opus': '*'
       ffmpeg-static: '*'
+      ytdl-core: 4.x
     resolution:
-      integrity: sha512-6tvsnIP7eg3wPL+r5/di0BJdXHcx8v1oMqrFdCe4o5xcpRmCLst77I7vcztRuZXLtcwoPgZ9MXbQWdLhXL1DPQ==
+      integrity: sha512-yb7NEPuh85nkznexdRz1YnBTavaglTx7YgZgtdDwOn1SYQnl/m+QhVtHfpoh4yqn5hWD0slP18ezqhyQEblduA==
   /@distube/ytpl/1.0.11:
     dependencies:
       miniget: 4.2.0
@@ -181,7 +183,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.0
       '@types/keyv': 3.1.1
-      '@types/node': 14.14.34
+      '@types/node': 14.14.35
       '@types/responselike': 1.0.0
     dev: false
     resolution:
@@ -196,7 +198,7 @@ packages:
       integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
   /@types/keyv/3.1.1:
     dependencies:
-      '@types/node': 14.14.34
+      '@types/node': 14.14.35
     dev: false
     resolution:
       integrity: sha512-MPtoySlAZQ37VoLaPcTHCu1RWJ4llDkULYZIzOYxlhxBqYPB0RsRlmMU0R6tahtFe27mIdkHV+551ZWV4PLmVw==
@@ -204,13 +206,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-koZJ89uLZufDvToeWO5BrC4CR4OUfHnUz2qoPs/daQH6qq3IN62QFxCTZ+bKaCE0xaoCAJYE4AXre8AbghCrhg==
-  /@types/node/14.14.34:
+  /@types/node/14.14.35:
     dev: false
     resolution:
-      integrity: sha512-dBPaxocOK6UVyvhbnpFIj2W+S+1cBTkHQbFQfeeJhoKFbzYcVUGHvddeWPSucKATb3F0+pgDq0i6ghEaZjsugA==
+      integrity: sha512-Lt+wj8NVPx0zUmUwumiVXapmaLUcAk3yPuHCFVXras9k5VT9TdhJqKqGVUQCD60OTMCl0qxJ57OiTL0Mic3Iag==
   /@types/responselike/1.0.0:
     dependencies:
-      '@types/node': 14.14.34
+      '@types/node': 14.14.35
     dev: false
     resolution:
       integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==
@@ -521,12 +523,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
-  /cross-fetch/3.1.0:
+  /cross-fetch/3.1.1:
     dependencies:
       node-fetch: 2.6.1
     dev: false
     resolution:
-      integrity: sha512-a+yso9lSpXQI9DH+YjAu/m0dVfP8IVoZDPBLLFcvGpeq3KHNdikkekTOdkHiXEuTq4GBOeO0MfWkE40yzF1w7g==
+      integrity: sha512-eIF+IHQpRzoGd/0zPrwQmHwDC90mdvjk+hcbYhKoaRrEk4GEIDqdjs/MljmdPPoHTQudbmWS+f0hZsEpFaEvWw==
   /cross-spawn/7.0.3:
     dependencies:
       path-key: 3.1.1
@@ -615,9 +617,9 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
-  /discord.js-light/3.5.4_51c459e18ff0a6c20d1e9f4e1452f83a:
+  /discord.js-light/3.5.4_c0f6113ac04fc1873313a2e44a0db9f4:
     dependencies:
-      discord.js: 12.5.1_51c459e18ff0a6c20d1e9f4e1452f83a
+      discord.js: 12.5.1_c0f6113ac04fc1873313a2e44a0db9f4
     dev: false
     engines:
       node: '>=12.0.0'
@@ -628,13 +630,13 @@ packages:
       utf-8-validate: '*'
     resolution:
       integrity: sha512-p1/a5F+uzTtZJOmmjP3e6N9WaA8zNTVNDgYtjamv++sI5FMPb4Dg/6K13c2a4W7GrXxWrrHhzfkHd3COP3bEoQ==
-  /discord.js/12.5.1_51c459e18ff0a6c20d1e9f4e1452f83a:
+  /discord.js/12.5.1_c0f6113ac04fc1873313a2e44a0db9f4:
     dependencies:
       '@discordjs/collection': 0.1.6
       '@discordjs/form-data': 3.0.1
       abort-controller: 3.0.0
       node-fetch: 2.6.1
-      prism-media: 1.2.8_47fb6477e8c5c7e421a7b0bdcce840dd
+      prism-media: 1.2.8_88ecd7e632ffa1f42dd505d20cc321c6
       setimmediate: 1.0.5
       tweetnacl: 1.0.3
       ws: 7.4.4_c70f8fc5586dd378b8c866035dbe710b
@@ -648,10 +650,10 @@ packages:
       utf-8-validate: '*'
     resolution:
       integrity: sha512-VwZkVaUAIOB9mKdca0I5MefPMTQJTNg0qdgi1huF3iwsFwJ0L5s/Y69AQe+iPmjuV6j9rtKoG0Ta0n9vgEIL6w==
-  /distube/2.8.10_47fb6477e8c5c7e421a7b0bdcce840dd:
+  /distube/2.8.11_88ecd7e632ffa1f42dd505d20cc321c6:
     dependencies:
       '@distube/youtube-dl': 1.0.4
-      '@distube/ytdl': 1.0.7_47fb6477e8c5c7e421a7b0bdcce840dd
+      '@distube/ytdl': 2.0.5_d8f3ff8b0fecdbff59ae3ce5169f6109
       '@distube/ytpl': 1.0.11
       '@distube/ytsr': 1.0.8
       ytdl-core: 4.5.0
@@ -663,7 +665,7 @@ packages:
       '@discordjs/opus': '*'
       ffmpeg-static: '*'
     resolution:
-      integrity: sha512-lFHJ2hTAbYcAkZ0V4CA3BwLlV3hTAEF++Fu24BI+4HTVfAB9wMSsXt1tfIT3tCswk8F7RKiBzRR1OOO+h5lylQ==
+      integrity: sha512-ZpcDSExw4VJhdTrZCr0HhXMelppglB5WVW59IVY9tVkWvoAM17fCJ2Yzlqxeyki2H9hw9+EtnyeIcygxg8s9VA==
   /doctrine/1.5.0:
     dependencies:
       esutils: 2.0.3
@@ -884,7 +886,7 @@ packages:
       file-entry-cache: 6.0.1
       functional-red-black-tree: 1.0.1
       glob-parent: 5.1.2
-      globals: 13.6.0
+      globals: 13.7.0
       ignore: 4.0.6
       import-fresh: 3.3.0
       imurmurhash: 0.1.4
@@ -995,7 +997,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
-  /ffmpeg-static/4.2.7:
+  /ffmpeg-static/4.2.8:
     dependencies:
       '@derhuerst/http-basic': 8.2.1
       env-paths: 2.2.1
@@ -1006,7 +1008,7 @@ packages:
       node: '>=10'
     requiresBuild: true
     resolution:
-      integrity: sha512-SGnOr2d+k0/9toRIv9t5/hN/DMYbm5XMtG0wVwGM1tEyXJAD6dbcWOEvfHq4LOySm9uykKL6LMC4eVPeteUnbQ==
+      integrity: sha512-7zdrHt+STR/vzKfF7aO79zyyBknxxEO0SjJnZvOoA2i0RUiAzNo/jv5QLa05poIFAdnuvQSb3ExV4rzkXzhhFQ==
   /file-entry-cache/6.0.1:
     dependencies:
       flat-cache: 3.0.4
@@ -1124,14 +1126,14 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-BWICuzzDvDoH54NHKCseDanAhE3CeDorgDL5MT6LMXXj2WCnd9UC2szdk4AWLfjdgNBCXLUanXYcpBBKOSWGwg==
-  /globals/13.6.0:
+  /globals/13.7.0:
     dependencies:
       type-fest: 0.20.2
     dev: true
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-YFKCX0SiPg7l5oKYCJ2zZGxcXprVXHcSnVuvzrT3oSENQonVLqM5pf9fN5dLGZGyCjhw8TN8Btwe/jKnZ0pjvQ==
+      integrity: sha512-Aipsz6ZKRxa/xQkZhNg0qIWXT6x6rD46f6x/PCnBomlttdIyAPak4YD9jTmKpZ72uROSMU87qJtcgpgHaVchiA==
   /got/11.8.2:
     dependencies:
       '@sindresorhus/is': 4.0.0
@@ -1837,10 +1839,10 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
-  /prism-media/1.2.8_47fb6477e8c5c7e421a7b0bdcce840dd:
+  /prism-media/1.2.8_88ecd7e632ffa1f42dd505d20cc321c6:
     dependencies:
       '@discordjs/opus': 0.4.0
-      ffmpeg-static: 4.2.7
+      ffmpeg-static: 4.2.8
     dev: false
     peerDependencies:
       '@discordjs/opus': ^0.4.0
@@ -2077,7 +2079,7 @@ packages:
       integrity: sha512-+QjB/9zRsbGB+2oOPK6K4jidLEWbsY43mov84vEj66dNj0aqqz6ul6VbxfUDlklOqgL4kVLFC/Yhr01PcXlJbQ==
   /spotify-url-info/2.2.0:
     dependencies:
-      cross-fetch: 3.1.0
+      cross-fetch: 3.1.1
       himalaya: 1.1.0
       spotify-uri: 2.1.0
     dev: false
@@ -2447,17 +2449,17 @@ specifiers:
   cat-loggr: ^1.1.0
   colon-notation: ^1.2.1
   discord.js-light: ^3.5.4
-  distube: ^2.8.10
+  distube: ^2.8.11
   erlpack: github:discord/erlpack
-  eslint: ^7.21.0
+  eslint: ^7.22.0
   eslint-config-standard: ^16.0.2
   eslint-plugin-import: ^2.22.1
   eslint-plugin-node: ^11.1.0
   eslint-plugin-promise: ^4.3.1
-  ffmpeg-static: ^4.2.7
+  ffmpeg-static: ^4.2.8
   spotify-url-info: ^2.2.0
   statcord.js: ^3.1.7
   string-progressbar: ^1.0.3
-  topgg-autoposter: ^1.1.7
+  topgg-autoposter: ^1.1.9
   utf-8-validate: ^5.0.4
   zlib-sync: ^0.1.7
