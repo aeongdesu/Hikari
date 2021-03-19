@@ -9,6 +9,7 @@ dependencies:
   erlpack: github.com/discord/erlpack/e27db8f82892bdb9b28a0547cc394d68b5d2242d
   ffmpeg-static: 4.2.7
   spotify-url-info: 2.2.0
+  statcord.js: 3.1.7
   string-progressbar: 1.0.3
   topgg-autoposter: 1.1.9
   utf-8-validate: 5.0.4
@@ -2088,6 +2089,13 @@ packages:
     dev: true
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+  /statcord.js/3.1.7:
+    dependencies:
+      node-fetch: 2.6.1
+      systeminformation: 5.6.7
+    dev: false
+    resolution:
+      integrity: sha512-8LtGM3TNMPCz1RHTAVy7tf8ZfWOCVqM9GpM1K+Koyu63jPlPZEDD+wU5mv1VG2ffG2WOfoUKr+nOIvf9ybvMmQ==
   /statuses/1.5.0:
     dev: false
     engines:
@@ -2199,6 +2207,21 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
+  /systeminformation/5.6.7:
+    dev: false
+    engines:
+      node: '>=4.0.0'
+    hasBin: true
+    os:
+      - darwin
+      - linux
+      - win32
+      - freebsd
+      - openbsd
+      - netbsd
+      - sunos
+    resolution:
+      integrity: sha512-NTgaL6AsRoXKbfZs6t+BkCUwLZjqIiT4IwqGUV2f7PgvDz8359HzOF0xYgDlTHCBR2GeWhFQAfo2wmoYTpz/og==
   /table/6.0.7:
     dependencies:
       ajv: 7.2.1
@@ -2433,6 +2456,7 @@ specifiers:
   eslint-plugin-promise: ^4.3.1
   ffmpeg-static: ^4.2.7
   spotify-url-info: ^2.2.0
+  statcord.js: ^3.1.7
   string-progressbar: ^1.0.3
   topgg-autoposter: ^1.1.7
   utf-8-validate: ^5.0.4

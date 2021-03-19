@@ -1,8 +1,9 @@
 {
-    "//": "TOKEN : discord token, KOKEN : ksoft token, YTCK : optional, youtube cookie, TOPKEN : top.gg bot token",
+    "//": "TOKEN : discord token, KOKEN : ksoft token, YTCK : optional, youtube cookie, TOPKEN : top.gg bot token, SCKEN : statcord token",
     "PREFIX": "",
     "TOKEN": "",
     "KOKEN": "",
     "YTCK": "",
-    "TOPKEN": ""
+    "TOPKEN": "",
+    "SCKEN": ""
 }
