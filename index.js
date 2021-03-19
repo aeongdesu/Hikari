@@ -94,7 +94,7 @@ client.on("message", async message => {
     client.commands.get(commandName) ||
     client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName))
 
-    statcord.postCommand(command, message.author.id)
+    statcord.postCommand(commandName, message.author.id)
 
     if (!command) return
 
