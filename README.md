@@ -7,7 +7,7 @@
 
 [![Discord Bots](https://top.gg/api/widget/status/719163943330906143.svg)](https://top.gg/bot/719163943330906143)
 
-###### Korean only music bot, distube example bot code based
+###### Korean only music bot, [distube example bot code based](https://github.com/distube/example)
 
 ## [V2 Progress](https://github.com/KeepSOBP/Hikari/projects/1)
 
