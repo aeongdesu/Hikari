@@ -27,7 +27,6 @@
     "erlpack": "github:discord/erlpack",
     "ffmpeg-static": "^4.2.8",
     "spotify-url-info": "^2.2.0",
-    "statcord.js": "^3.1.7",
     "string-progressbar": "^1.0.3",
     "topgg-autoposter": "^1.1.9",
     "utf-8-validate": "^5.0.4",

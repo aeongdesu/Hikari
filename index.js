@@ -1,6 +1,5 @@
 const Discord = require("discord.js-light")
 const { MessageEmbed } = require("discord.js-light")
-const Statcord = require("statcord.js")
 const client = new Discord.Client({
     messageCacheLifetime: 60,
     fetchAllMembers: false,
@@ -23,13 +22,6 @@ client.aliases = new Discord.Collection()
 const cooldowns = new Discord.Collection()
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 
-// Statcord, delete if you dont use statcord
-
-const statcord = new Statcord.Client({
-    client,
-    key: SCKEN
-})
-
 // Client events
 
 client.on("ready", () => {
@@ -47,8 +39,7 @@ client.on("ready", () => {
 
     // delete if you dont use top.gg
     AutoPoster(TOPKEN, client)
-    // delete if you dont use statcord
-    statcord.autopost()
+
 })
 
 // Debug | client.on("debug", (e) => logger.log(e))
@@ -93,8 +84,6 @@ client.on("message", async message => {
     const command =
     client.commands.get(commandName) ||
     client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName))
-
-    statcord.postCommand(commandName, message.author.id)
 
     if (!command) return
 
