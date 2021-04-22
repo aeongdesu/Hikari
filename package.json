@@ -7,8 +7,8 @@
     "type": "git",
     "url": "git+https://github.com/KeepSOBP/Hikari.git"
   },
-  scripts": {
-    "start": "node server.js"
+  "scripts": {
+    "start": "node index.js"
   },
   "keywords": [
     "discordjs"
