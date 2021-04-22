@@ -1,4 +1,5 @@
 const Discord = require("discord.js")
+Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android" 
 const { MessageEmbed } = require("discord.js")
 const client = new Discord.Client({
     messageCacheLifetime: 60,
