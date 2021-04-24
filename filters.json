@@ -19,5 +19,7 @@
     "haas": "haas",
     "mcompand": "mcompand",
     "double": "atempo=1.5",
-    "half": "atempo=0.5"
+    "half": "atempo=0.5",
+    "sofa": "sofalizer=sofa=/path/to/ClubFritz12.sofa:type=freq:radius=2:rotation=5",
+    "desilencer": "silenceremove=window=0:detection=peak:stop_mode=all:start_mode=all:stop_periods=-1:stop_threshold=0"
 }
