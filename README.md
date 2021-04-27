@@ -1,4 +1,5 @@
 # Hikari
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1a43a2de28a740b6aefea484da4ba01a)](https://app.codacy.com/gh/KeepSOBP/Hikari?utm_source=github.com&utm_medium=referral&utm_content=KeepSOBP/Hikari&utm_campaign=Badge_Grade_Settings)
 [![Discord](https://img.shields.io/discord/661525235207634994?style=for-the-badge)](https://discord.link/bread)
 ![GitHub repo size](https://img.shields.io/github/repo-size/KeepSOBP/Hikari?style=for-the-badge)
 [![GitHub](https://img.shields.io/github/license/keepsobp/hikari?style=for-the-badge)](https://github.com/KeepSOBP/Hikari/blob/master/LICENSE)
