@@ -18,7 +18,7 @@
     "@discordjs/opus": "^0.5.0",
     "@distube/spotify": "github:distubejs/spotify",
     "discord.js": "^12.5.3",
-    "distube": "github:skick1234/distube#v3-beta",
+    "distube": "github:skick1234/distube#2.8.13",
     "dokdo": "^0.3.0",
     "koreanbots": "^2.0.10"
   }
