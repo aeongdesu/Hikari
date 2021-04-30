@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@discordjs/opus": "^0.5.0",
-    "@distube/spotify": "^0.1.1",
+    "@distube/spotify": "^0.2.0",
     "discord.js": "github:discordjs/discord.js#master",
     "distube": "github:skick1234/distube#beta",
     "dokdo": "github:KeepSOBP/dokdo#main",
