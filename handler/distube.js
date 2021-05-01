@@ -7,6 +7,8 @@ module.exports = (client) => {
     client.distube = new DisTube(client, {
         searchSongs: 10,
         leaveOnEmpty: true,
+        leaveOnFinish: true,
+        leaveOnStop: true,
         customFilters: config.filters,
         YoutubeCookie: config.ytcookie,
         plugins: [new SpotifyPlugin()]
