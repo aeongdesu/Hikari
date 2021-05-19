@@ -1,7 +1,7 @@
 # Hikari v3 - rewrite
 <p>
-  <a href="https://www.codacy.com/gh/KeepSOBP/Hikari/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=KeepSOBP/Hikari&amp;utm_campaign=Badge_Grade" target="_blank">
-    <img alt="Codacy" src="https://img.shields.io/codacy/grade/48f3e2a708634301a5a614dcabe9043c/v3?label=Codacy%20Score" />
+  <a href="https://github.com/KeepSOBP/Hikari/actions/workflows/pr-lint.yml" target="_blank">
+    <img alt="pr-lint checks" src="https://github.com/KeepSOBP/Hikari/actions/workflows/pr-lint.yml/badge.svg" />
   </a>
   <a href="https://dsc.gg/nyan" target="_blank">
     <img alt="Discord" src="https://img.shields.io/discord/661525235207634994.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2" />
