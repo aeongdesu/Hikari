@@ -16,7 +16,7 @@
     "url": "https://github.com/KeepSOBP/Hikari/issues"
   },
   "dependencies": {
-    "@discordjs/opus": "^0.5.3",
+    "@discordjs/opus": "^0.6.0",
     "@discordjs/voice": "^0.6.0",
     "@distube/soundcloud": "^0.2.2",
     "@distube/spotify": "^0.6.2",
