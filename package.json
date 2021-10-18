@@ -18,7 +18,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.6.0",
     "@discordjs/voice": "^0.6.0",
-    "@distube/soundcloud": "^0.2.2",
+    "@distube/soundcloud": "^1.0.0",
     "@distube/spotify": "^0.6.3",
     "discord.js": "latest",
     "distube": "beta",
