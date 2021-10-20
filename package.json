@@ -21,7 +21,7 @@
     "@distube/soundcloud": "^1.0.0",
     "@distube/spotify": "^1.0.0",
     "discord.js": "latest",
-    "distube": "^3.0.1",
+    "distube": "latest",
     "dokdo": "^0.5.1",
     "koreanbots": "^3.0.0",
     "libsodium-wrappers": "^0.7.9",
@@ -34,6 +34,6 @@
   },
   "resolutions": {
     "discord.js": "latest",
-    "distube": "beta"
+    "distube": "latest"
   }
 }
