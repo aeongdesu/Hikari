@@ -98,14 +98,7 @@ module.exports = (client) => {
             queue.textChannel.send({ embeds: [embed] })
         })
         .on("disconnect", queue => {
-            if (queue.songs) {
-                const embed = new MessageEmbed()
-                    .setTitle("보이스채널에서 끊겼어요!")
-                    .setColor("cbd0ed")
-                    .setDescription(`\`${client.config.prefix}재생\` 명령어로 다시 재생해 주세요.`)
-                queue.stop()
-                return queue.textChannel.send({ embeds: [embed] })
-            }
+            queue.stop()
         })
         .on("error", (channel, e) => {
             channel.send("에러가 발생 하였습니다!\n")

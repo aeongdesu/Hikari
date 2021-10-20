@@ -1,5 +1,10 @@
 FROM node:slim
 
+ENV USER=hikari
+
+# make hikari user
+RUN useradd --create-home --home /home/${USER} -ms /bin/bash ${USER}
+
 # install pnpm
 RUN npm install -g pnpm
 
@@ -10,25 +15,24 @@ RUN apt-get update && \
 	ffmpeg \
 	python3 \
 	build-essential \
-        autoconf \
-        automake \
-        g++ \
-        libtool && \
-	apt-get purge -y --auto-remove
+	make && \
+	apt-get purge -y --auto-remove && \
+	rm -rf /var/lib/apt/lists/*
+
+# set python aliases for distube(youtube-dl)
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 # setup workdir
-RUN mkdir -p /app
-WORKDIR /app
-ADD . /app
-
-# install sodium instead of libsodium-wrappers
-# also install dependencies too
-RUN pnpm rm libsodium-wrappers && pnpm install sodium
+USER ${USER}
+WORKDIR /home/hikari
+COPY --chown=${USER}:${USER} . .
 
 # set SHELL env for dokdo
 ENV SHELL="/bin/bash"
 
-# set python aliases for distube(youtube-dl)
-RUN ln -s /usr/bin/python3 /usr/bin/python
+# install dependencies
+RUN pnpm install
+
+VOLUME [ "/home/hikari" ]
 
 ENTRYPOINT [ "pnpm", "start" ]

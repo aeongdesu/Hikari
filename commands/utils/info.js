@@ -1,8 +1,8 @@
 const { MessageEmbed } = require("discord.js")
 
 module.exports = {
-    name: "핑",
-    description: "퐁",
+    name: "봇정보",
+    description: "봇 정보를 보여줍니다",
     cooldown: "5",
     run: async (client, message) => {
         const nostring = new MessageEmbed()

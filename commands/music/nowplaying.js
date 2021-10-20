@@ -1,3 +1,4 @@
+/*
 const musicUtil = require("../../utils/music")
 module.exports = {
     name: "정보",
@@ -10,7 +11,8 @@ module.exports = {
         if (!queue) return message.channel.send("대기열에 노래가 없어요.")
         if (!queue.playing && !queue.paused) return message.channel.send("듣고 계신거 맞죠?!")
 
-        const nowPlayingTarget = await message.reply("로딩중..")
+        const nowPlayingTarget = await message.reply({ embeds: [musicUtil.nowPlayingEmbed(queue)]})
         musicUtil.liveNowPlayingMessage(client, nowPlayingTarget, queue)
     }
 }
+*/

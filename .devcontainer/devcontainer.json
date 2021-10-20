@@ -1,0 +1,12 @@
+{
+	"name": "Hikari",
+	"context": "..",
+
+	"dockerFile": "../Dockerfile",
+
+	"settings": {},
+	
+	"extensions": [ "dbaeumer.vscode-eslint", "wscats.delete-node-modules" ],
+
+	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ]
+}
